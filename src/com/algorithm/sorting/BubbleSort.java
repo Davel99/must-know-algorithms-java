@@ -3,8 +3,8 @@ package com.algorithm.sorting;
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		int[] arr = {5,10,1,3};
-		BubbleSort.bubbleSort(arr,true);
+		int[] arr = {5,10,-4,1,3,100,99,-1};
+		BubbleSort.bubbleSort(arr,false);
 		BubbleSort.printArray(arr);
 	}
 	
@@ -35,7 +35,7 @@ public class BubbleSort {
 	public static void printArray(int[] arr) {
 		String message = "";
 		for(int i = 0; i < arr.length; i++) {
-			message += arr[i] + ", ";
+			message += arr[i] + " ";
 		}
 		System.out.println(message);		
 	}
