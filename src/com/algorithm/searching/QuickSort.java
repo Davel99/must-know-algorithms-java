@@ -15,9 +15,12 @@ public class QuickSort {
 	}
 	
 	public static void quickSort(int[] arr, int start, int end) {
+		//Do nothing if array has just one element
 		if(start >= end) return;
 		
+		//Calculate pivot
 		int pivot = setPivot(arr, start, end);
+		//Sort left and right of the pivot
 		quickSort(arr, start, pivot-1);
 		quickSort(arr, pivot+1, end);		
 	}
@@ -29,6 +32,7 @@ public class QuickSort {
 		//Set utility vars
 		int temp;
 		int y = start -1;
+		//Start the main loop
 		while(start <= end) {
 			boolean canProceed;
 			if(QuickSort.asc) canProceed = arr[start] < pivotValue;
@@ -41,43 +45,14 @@ public class QuickSort {
 			}
 			start++;
 		}
+		//Setting the pivot point, y + 1
 		y++;
+		//Swap values between arr[y] and arr[end] (pivot)
 		temp = arr[end];
 		arr[end] = arr[y];
 		arr[y] = temp;
-		
+		//Return the pivot position
 		return y;		
 	}
-	
-//	public static void quickSort(int[] arr, int start, int end) {
-//		if(end <= start) return;
-//		
-//		int pivot = getPivot(arr, start, end);
-//		quickSort(arr, start, pivot -1);
-//		quickSort(arr, pivot + 1, end);
-//		
-//	}
-//	
-//	public static int getPivot(int[] arr, int start, int end) {
-//		int pivotValue = arr[end];
-//		int temp;
-//		int x = start;
-//		int y = start -1;
-//		while(x <= end) {
-//			if(arr[x] < pivotValue) {
-//				y++;
-//				temp = arr[y];
-//				arr[y] = arr[x];
-//				arr[x] = temp;
-//			}			
-//			x++;
-//		}
-//		y++;
-//		temp = arr[y];
-//		arr[y] = arr[end];
-//		arr[end] = temp;
-//		
-//		return y;
-//	}
 
 }
