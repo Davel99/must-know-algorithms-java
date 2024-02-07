@@ -1,4 +1,4 @@
-package com.algorithm.searching;
+package com.algorithm.sorting;
 
 import com.algorithm.utility.Utility;
 
